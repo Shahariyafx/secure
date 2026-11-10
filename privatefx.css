@@ -728,3 +728,215 @@ body {
         scroll-behavior: auto !important;
     }
 }
+
+
+/* =====================================
+   CITY BACKGROUND POSITIONING FIX
+   PASTE AT THE VERY END OF privatefx.css
+===================================== */
+
+/* PAGE BACKGROUND */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background: transparent !important;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* PUT CITY BEHIND THE CONTENT */
+.city-scene {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh;
+    overflow: hidden !important;
+    z-index: 0 !important;
+    pointer-events: none;
+    display: block !important;
+    background: #010207 !important;
+}
+
+/* SKY */
+.night-sky {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* STARS */
+.stars {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* MOON */
+.moon {
+    position: absolute !important;
+    top: 9%;
+    right: 13%;
+    z-index: 3;
+    border-radius: 50%;
+}
+
+/* CLOUDS */
+.cloud {
+    position: absolute !important;
+    left: -280px;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.cloud-one {
+    top: 22%;
+}
+
+.cloud-two {
+    top: 35%;
+}
+
+.cloud-three {
+    top: 13%;
+}
+
+/* CITY BUILDINGS */
+.city-layer {
+    position: absolute !important;
+    left: 0;
+    width: 100%;
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: space-around;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.city-back {
+    bottom: 23%;
+    height: 34%;
+    opacity: .55;
+}
+
+.city-middle {
+    bottom: 15%;
+    height: 43%;
+    opacity: .8;
+}
+
+.city-front {
+    bottom: 10%;
+    height: 48%;
+}
+
+/* BUILDINGS */
+.building {
+    position: relative !important;
+    flex: 1;
+    max-width: 150px;
+    min-width: 25px;
+    height: 65%;
+    overflow: hidden;
+}
+
+.building::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    pointer-events: none;
+}
+
+.building::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    pointer-events: none;
+}
+
+/* ROAD */
+.city-horizon {
+    position: absolute !important;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.road {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 11%;
+    z-index: 7;
+    overflow: hidden;
+}
+
+.road-lights {
+    position: absolute !important;
+    top: 48%;
+    left: 0;
+    width: 200%;
+    height: 3px;
+}
+
+.city-vignette {
+    position: absolute !important;
+    inset: 0;
+    z-index: 8;
+    pointer-events: none;
+}
+
+/* KEEP PAGE CONTENT ABOVE THE CITY */
+.key-screen {
+    position: fixed !important;
+    inset: 0;
+    z-index: 10 !important;
+}
+
+.access-intro {
+    position: fixed !important;
+    inset: 0;
+    z-index: 9 !important;
+}
+
+.main-container {
+    position: relative;
+    z-index: 2 !important;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .moon {
+        top: 7%;
+        right: 10%;
+    }
+
+    .city-back {
+        bottom: 23%;
+    }
+
+    .city-middle {
+        bottom: 15%;
+    }
+
+    .city-front {
+        bottom: 10%;
+    }
+}
