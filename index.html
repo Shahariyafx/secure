@@ -1,1 +1,65 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECUREFX | Private Access</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="secure-container">
+
+        <div class="secure-card">
+
+            <div class="database-label">
+                DATABASE
+            </div>
+
+            <div class="secure-icon">
+                ◈
+            </div>
+
+            <h1>SECUREFX</h1>
+
+            <p class="subtitle">
+                Private Database Access
+            </p>
+
+            <div class="input-area">
+                <label for="accessKey">ACCESS KEY</label>
+
+                <input
+                    type="password"
+                    id="accessKey"
+                    placeholder="Enter your security key"
+                    autocomplete="off"
+                >
+            </div>
+
+            <p id="errorMessage" class="error-message">
+                Invalid access key. Please try again.
+            </p>
+
+            <button id="continueBtn" type="button">
+                CONTINUE
+            </button>
+
+            <div class="security-status">
+                <span class="status-dot"></span>
+                SYSTEM PROTECTED
+            </div>
+
+        </div>
+
+        <footer>
+            SECUREFX DATABASE SYSTEM
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
