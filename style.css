@@ -1,160 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-#continueBtn:hover {
-    transform: translateY(-4px) scale(1.025);
-    letter-spacing: 4px;
-}
+/* Heading */
 
-#continueBtn:active {
-    transform: scale(.96);
-}
-
-#continueBtn:disabled {
-    opacity: .7;
-    cursor: wait;
-}
-
-/* Button shine */
-
-#continueBtn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-
-    width: 65%;
-    height: 100%;
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(29px, 8vw, 38px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
 
     background: linear-gradient(
         90deg,
-        transparent,
-        #ffffff90,
-        transparent
+        #0754bd,
+        #168cff,
+        #58caff,
+        #087cff
     );
 
-    transform: skewX(-25deg);
-    animation: shine 2.5s infinite;
-}
+    background-size: 250% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-@keyframes shine {
-    to { left: 160%; }
-}
+    animation: textFlow 4s linear infinite;
 
-/* Error */
-
-.error-message {
-    display: none;
-    margin-top: 15px;
-
-    color: #d73549;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.6;
-
-    animation: errorAppear .3s ease;
-}
-
-@keyframes errorAppear {
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Security status */
-
-.security-status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
-
-    margin-top: 28px;
-
-    color: #66819f;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-
-    background: #20c98b;
-    box-shadow: 0 0 15px #20c98b;
-
-    animation: statusPulse 1s infinite alternate;
-}
-
-@keyframes statusPulse {
-    to {
-        opacity: .35;
-        transform: scale(.7);
-    }
-}
-
-/* Footer */
-
-footer {
-    margin-top: 25px;
-    text-align: center;
-
-    color: #ffffffcc;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    text-shadow: 0 0 12px #168cff;
-}
-
-/* Mobile */
-
-@media(max-width: 480px) {
-    body {
-        padding: 16px;
-    }
-
-    .secure-card {
-        padding: 35px 20px;
-    }
-
-    .moon {
-        width: 55px;
-        height: 55px;
-        right: 10%;
-        top: 8%;
-    }
-
-    .moon::after {
-        width: 53px;
-        height: 53px;
-        left: 13px;
-    }
-
-    .city-back {
-        height: 35%;
-    }
-
-    .city-middle {
-        height: 25%;
-    }
-
-    .city-front {
-        height: 18%;
-    }
-}
-
-/* Reduced motion */
-
-@media(prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
+    filter: drop-shadow(0 3px 8px #168cff30);
 }
