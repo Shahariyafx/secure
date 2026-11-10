@@ -2,7 +2,7 @@
 const ACCESS_KEY = "securefx";
 
 const PRIVATE_PAGE_URL =
-    "https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/private.html";
+    "https://shahariyafx.github.io/secure/private.html";
 
 const input = document.getElementById("accessKey");
 const button = document.getElementById("continueBtn");
