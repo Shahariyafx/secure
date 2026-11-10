@@ -1,20 +1,19 @@
 
 const ACCESS_KEY = "securefx";
 
-// Replace this with your actual GitHub Pages URL
 const PRIVATE_PAGE_URL =
     "https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/private.html";
 
 const input = document.getElementById("accessKey");
 const button = document.getElementById("continueBtn");
 const error = document.getElementById("errorMessage");
+const container = document.querySelector(".secure-container");
 
 button.addEventListener("click", function () {
 
     if (input.value === ACCESS_KEY) {
 
         error.style.display = "none";
-
         button.textContent = "ACCESS GRANTED...";
         button.disabled = true;
 
@@ -23,6 +22,14 @@ button.addEventListener("click", function () {
     } else {
 
         error.style.display = "block";
+
+        container.classList.remove("shake");
+
+        // Restart full-view shake animation
+        void container.offsetWidth;
+
+        container.classList.add("shake");
+
         input.value = "";
         input.focus();
 
@@ -35,4 +42,3 @@ input.addEventListener("keydown", function(event) {
         button.click();
     }
 });
-
